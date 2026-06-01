@@ -5,7 +5,9 @@ from bot.orders import place_order
 from bot.validators import validate
 import bot.logging_config
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(
+    description="Binance Futures Execution Engine"
+)
 
 parser.add_argument("--symbol", required=True)
 parser.add_argument("--side", required=True)
@@ -16,6 +18,10 @@ parser.add_argument("--price", type=float)
 args = parser.parse_args()
 
 try:
+
+    print("\n" + "=" * 50)
+    print(" BINANCE FUTURES EXECUTION ENGINE ")
+    print("=" * 50)
 
     validate(
         args.side,
@@ -43,27 +49,47 @@ try:
     logging.info(f"Response: {response}")
 
     print("\nORDER SUMMARY")
-    print("----------------")
-    print(f"Symbol: {args.symbol}")
-    print(f"Side: {args.side}")
-    print(f"Type: {args.type}")
-    print(f"Quantity: {args.quantity}")
+    print("-" * 50)
+    print(f"Symbol      : {args.symbol}")
+    print(f"Side        : {args.side}")
+    print(f"Type        : {args.type}")
+    print(f"Quantity    : {args.quantity}")
 
     if args.type == "LIMIT":
-        print(f"Price: {args.price}")
+        print(f"Price       : {args.price}")
 
     print("\nRESPONSE")
-    print("----------------")
-    print("Order ID:", response["orderId"])
-    print("Status:", response["status"])
-    print("Executed Qty:", response["executedQty"])
-    print("Average Price:", response.get("avgPrice", "N/A"))
+    print("-" * 50)
+    print(f"Order ID    : {response['orderId']}")
+    print(f"Status      : {response['status']}")
+    print(f"Executed Qty: {response['executedQty']}")
+    print(f"Avg Price   : {response.get('avgPrice', 'N/A')}")
 
     print("\nSUCCESS: Order submitted successfully")
+    print("=" * 50)
 
 except Exception as e:
 
     logging.error(str(e))
 
-    print("\nFAILED")
+    print("\n" + "=" * 50)
+    print(" ORDER FAILED ")
+    print("=" * 50)
+
     print("Error:", e)
+
+    print("\nValid Examples:\n")
+
+    print(
+        "Market Order:\n"
+        "python cli.py --symbol BTCUSDT "
+        "--side BUY --type MARKET "
+        "--quantity 0.001\n"
+    )
+
+    print(
+        "Limit Order:\n"
+        "python cli.py --symbol BTCUSDT "
+        "--side SELL --type LIMIT "
+        "--quantity 0.001 --price 100000\n"
+    )
