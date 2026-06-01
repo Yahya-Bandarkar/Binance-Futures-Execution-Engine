@@ -59,6 +59,10 @@ trading.log
 
 API requests and responses are stored in `trading.log`.
 
+## Bonus Implemented
+
+Enhanced CLI UX with formatted output, improved validation messages, clear success/failure notifications, and user-friendly command examples.
+
 ## Author
 
 Yahya Bandarkar
