@@ -2,16 +2,18 @@
 
 A Python CLI application for executing Market and Limit orders on Binance Futures Testnet (USDT-M).
 
-## Features
+## ✨ Features
 
-* Market Orders
-* Limit Orders
-* BUY and SELL Support
-* CLI-based Input
-* Input Validation
-* Logging
-* Error Handling
-* Profit & Loss (P&L) Tracking
+* 📈 Market Orders
+* 🎯 Limit Orders
+* 🔄 BUY and SELL Support
+* 💻 CLI-based Input
+* ✅ Input Validation
+* 📝 Logging
+* ⚠️ Error Handling
+* 💰 Profit & Loss (P&L) Tracking
+* 📊 Portfolio Summary Dashboard
+
 
 ## Setup
 
