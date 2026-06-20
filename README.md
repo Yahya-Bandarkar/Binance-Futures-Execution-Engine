@@ -15,7 +15,6 @@ A Python CLI application for executing Market and Limit orders on Binance Future
 * 📊 Portfolio Summary Dashboard
 * 📜 Order History Tracking
 * 🔔 Price Alerts & Notifications
-* 📈 Real-Time Price Simulation
 
 
 ## Setup
