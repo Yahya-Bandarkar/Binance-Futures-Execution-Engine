@@ -12,6 +12,7 @@ A Python CLI application for executing Market and Limit orders on Binance Future
 * 📝 Logging
 * ⚠️ Error Handling
 * 💰 Profit & Loss (P&L) Tracking
+* 📊 Portfolio Summary Dashboard
 
 
 
